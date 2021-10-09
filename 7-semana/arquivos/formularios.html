@@ -1,0 +1,415 @@
+<html>
+	<style>
+		input {
+			box-shadow: none;
+			border: 1px solid lightgray;
+			border-radius: 3px;
+			padding: 5px 5px 5px 5px;
+		}
+		input:invalid {
+			border-color: red;
+		}
+		textarea {
+			box-shadow: none;
+			border: 1px solid lightgray;
+			border-radius: 3px;
+			padding: 5px 5px 5px 5px;
+		}
+		textarea:invalid {
+			border-color: red;
+		}
+	</style>
+	<body>
+		<table>
+			<tr>
+				<td valign="top">
+					<b>tipos de elementos</b>
+					<hr>
+					<form name="form1">
+						<table>
+							<tr>
+								<td>input hidden</td>
+								<td>
+									<input type="hidden" id="hidden1" name="hidden1" value="hidden1">
+								</td>
+							</tr>
+							<tr>
+								<td>input text</td>
+								<td>
+									<input type="text" id="text1" name="text1" size="20" pattern=".*" value="text1">
+								</td>
+							</tr>
+							<tr>
+								<td>input password</td>
+								<td>
+									<input type="password" id="password1" name="password1" size="10" value="password1">
+								</td>
+							</tr>
+							<tr>
+								<td>input radio</td>
+								<td>
+									<input type="radio" id="radio1a" name="radio1" value="radio1a" checked> radio1a<br>
+									<input type="radio" id="radio1b" name="radio1" value="radio1b"> radio1b<br>
+									<input type="radio" id="radio1c" name="radio1" value="radio1c"> radio1c
+								</td>
+							</tr>
+							<tr>
+								<td>input checkbox</td>
+								<td>
+									<input type="checkbox" id="checkbox1" name="checkbox1" value="checkbox1" checked> checkbox1<br>
+									<input type="checkbox" id="checkbox2" name="checkbox2" value="checkbox2"> checkbox2<br>
+									<input type="checkbox" id="checkbox3" name="checkbox3" value="checkbox1"> checkbox3
+								</td>
+							</tr>
+							<tr>
+								<td>input date</td>
+								<td>
+									<input type="date" id="date1" name="date1" value="2020-12-31">
+								</td>
+							</tr>
+							<tr>
+								<td>input time</td>
+								<td>
+									<input type="time" id="time1" name="time1" value="23:59">
+								</td>
+							</tr>
+							<tr>
+								<td>input number</td>
+								<td>
+									<input type="number" id="number1" name="number1" size="5" value="2" min="0" max="5" step="1"><br>
+									<input type="number" id="number2" name="number2" size="5" value="2" min="0" max="5" step="0.01">
+								</td>
+							</tr>
+							<tr>
+								<td>select</td>
+								<td>
+									<select id="select1" name="select1">
+										<option value="value1">option1</option>
+										<option value="value2" selected>option2</option>
+										<option value="value3">option3</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>textarea</td>
+								<td>
+									<textarea id="textarea1" name="textarea1" rows="3" cols="30">textarea1</textarea>
+								</td>
+							</tr>
+							<tr>
+								<td>button</td>
+								<td>
+									<button type="button" id="button1" onclick="click1();">button1</button>
+								</td>
+							</tr>
+						</table>
+					</form>
+					<hr>
+				</td>
+				<td valign="top">
+					<b>atributos de elementos</b>
+					<hr>
+					<table>
+						<tr>
+							<td width="100">id</td>
+							<td>
+								<select id="select2" name="select2">
+									<option value="text1">text1</option>
+									<option value="password1">password1</option>
+									<option value="radio1a">radio1a</option>
+									<option value="radio1b">radio1b</option>
+									<option value="radio1c">radio1c</option>
+									<option value="checkbox1">checkbox1</option>
+									<option value="checkbox2">checkbox2</option>
+									<option value="checkbox3">checkbox3</option>
+									<option value="date1">date1</option>
+									<option value="time1">time1</option>
+									<option value="number1">number1</option>
+									<option value="number2">number2</option>
+									<option value="select1">select1</option>
+									<option value="textarea1">textarea1</option>
+									<option value="button1">button1</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<input type="checkbox" id="readonly" name="readonly" value="readonly"> readOnly<br>
+								<input type="checkbox" id="disabled" name="disabled" value="disabled"> disabled<br>
+								<input type="checkbox" id="required" name="required" value="required"> required
+
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<button type="button" id="button2" onclick="click2();">Altera</button>
+							</td>
+						</tr>
+					</table>
+					<hr>
+					<table>
+						<tr>
+							<td width="100">id</td>
+							<td>
+								<select id="select3" name="select3">
+									<option value="hidden1">hidden1</option>
+									<option value="text1">text1</option>
+									<option value="password1">password1</option>
+									<option value="radio1a">radio1a</option>
+									<option value="radio1b">radio1b</option>
+									<option value="radio1c">radio1c</option>
+									<option value="checkbox1">checkbox1</option>
+									<option value="checkbox2">checkbox2</option>
+									<option value="checkbox3">checkbox3</option>
+									<option value="date1">date1</option>
+									<option value="time1">time1</option>
+									<option value="number1">number1</option>
+									<option value="number2">number2</option>
+									<option value="textarea1">textarea1</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>value</td>
+							<td>
+								<input type="text" id="value" name="value" size="10">
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<button type="button" id="button3" onclick="click3();">Altera</button>
+							</td>
+						</tr>
+					</table>
+					<hr>
+					<table>
+						<tr>
+							<td width="100">id</td>
+							<td>
+								<select id="select4" name="select4">
+									<option value="radio1a">radio1a</option>
+									<option value="radio1b">radio1b</option>
+									<option value="radio1c">radio1c</option>
+									<option value="checkbox1">checkbox1</option>
+									<option value="checkbox2">checkbox2</option>
+									<option value="checkbox3">checkbox3</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>checked</td>
+							<td>
+								<select id="select5" name="select5">
+									<option value="false">false</option>
+									<option value="true">true</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<button type="button" id="button4" onclick="click4();">Altera</button>
+							</td>
+						</tr>
+					</table>
+					<hr>
+					<table>
+						<tr>
+							<td width="100">id</td>
+							<td>text1</td>
+						</tr>
+						<tr>
+							<td>placeholder</td>
+							<td>
+								<input type="text" id="placeholder" name="placeholder" size="10">
+							</td>
+						</tr>
+						<tr>
+							<td>pattern</td>
+							<td>
+								<input type="text" id="pattern" name="pattern" size="10">
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<button type="button" id="button7" onclick="click7();">Altera</button>
+							</td>
+						</tr>
+					</table>
+					<hr>
+					<table>
+						<tr>
+							<td width="100">id</td>
+							<td>select1</td>
+						</tr>
+						<tr>
+							<td>
+								options <input type="button" id="button5" value="+" style="width: 20px;" onclick="click5();"><input type="button" id="button6" value="-" style="width: 20px;" onclick="click6();">
+							</td>
+							<td>
+								<table>
+									<thead>
+										<tr>
+											<td>values</td>
+											<td>options</td>
+										</tr>
+									</thead>
+									<tbody id="table1">
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>selectedIndex</td>
+							<td>
+								<input type="text" id="index" name="index" size="10">
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<button type="button" id="button8" onclick="click8();">Altera</button>
+							</td>
+						</tr>
+					</table>
+					<hr>
+				</td>
+				<td valign="top">
+					<b>eventos de elementos</b>
+					<hr>
+					<table>
+						<tr>
+							<td>id</td>
+							<td>
+								<select id="select6" name="select2">
+									<option value="text1">text1</option>
+									<option value="password1">password1</option>
+									<option value="radio1a">radio1a</option>
+									<option value="radio1b">radio1b</option>
+									<option value="radio1c">radio1c</option>
+									<option value="checkbox1">checkbox1</option>
+									<option value="checkbox2">checkbox2</option>
+									<option value="checkbox3">checkbox3</option>
+									<option value="date1">date1</option>
+									<option value="time1">time1</option>
+									<option value="number1">number1</option>
+									<option value="number2">number2</option>
+									<option value="select1">select1</option>
+									<option value="textarea1">textarea1</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<input type="checkbox" id="onfocus" name="onfocus" value="onfocus"> onfocus<br>
+								<input type="checkbox" id="onblur" name="onblur" value="onblur"> onblur<br>
+								<input type="checkbox" id="oninput" name="oninput" value="oninput"> oninput<br>
+								<input type="checkbox" id="onchange" name="onchange" value="onchange"> onchange<br>
+								<input type="checkbox" id="onclick" name="onclick" value="onclick"> onclick
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<button type="button" id="button9" onclick="click9();">Altera</button>
+							</td>
+						</tr>
+					</table>
+					<hr>
+				</td>
+			</tr>
+		</table>
+	</body>
+	<script>
+		function click1() {
+			alert(
+				"hidden1: " + document.getElementById("hidden1").value + "\n" +
+				"text1: " + document.getElementById("text1").value + "\n" +
+				"password1: " + document.getElementById("password1").value + "\n" +
+				"radio1a: " + document.getElementById("radio1a").value + " " + document.getElementById("radio1a").checked + "\n" +
+				"radio1b: " + document.getElementById("radio1b").value + " " + document.getElementById("radio1b").checked + "\n" +
+				"radio1c: " + document.getElementById("radio1c").value + " " + document.getElementById("radio1c").checked + "\n" +
+				"checkbox1: " + document.getElementById("checkbox1").value + " " + document.getElementById("checkbox1").checked + "\n" +
+				"checkbox2: " + document.getElementById("checkbox2").value + " " + document.getElementById("checkbox2").checked + "\n" +
+				"checkbox3: " + document.getElementById("checkbox3").value + " " + document.getElementById("checkbox3").checked + "\n" +
+				"date1: " + document.getElementById("date1").value + "\n" +
+				"time1: " + document.getElementById("time1").value + "\n" +
+				"number1: " + document.getElementById("number1").value + "\n" +
+				"number2: " + document.getElementById("number2").value + "\n" +
+				"select1: " + document.getElementById("select1").value + "\n" +
+				"textarea1: " + document.getElementById("textarea1").value
+			);
+		}
+
+		function click2() {
+			var element = document.getElementById(document.getElementById("select2").value);
+			element.readOnly = document.getElementById("readonly").checked;
+			element.disabled = document.getElementById("disabled").checked;
+			element.required = document.getElementById("required").checked;
+		}
+
+		function click3() {
+			var element = document.getElementById(document.getElementById("select3").value);
+			element.value = document.getElementById("value").value;
+		}
+
+		function click4() {
+			var element = document.getElementById(document.getElementById("select4").value);
+			element.checked = document.getElementById("select5").value == "true";
+		}
+
+		function click5() {
+			var index = document.getElementById("table1").rows.length + 1;
+			document.getElementById("table1").insertRow(-1).innerHTML = "<td><input type=\"text\" id=\"value" + index + "\" name=\"value" + index + "\" size=\"10\" value=\"value" + index + "\"></td><td><input type=\"text\" id=\"option" + index + "\" name=\"option" + index + "\" size=\"10\" value=\"option" + index + "\"></td>";
+		}
+
+		function click6() {
+			document.getElementById("table1").deleteRow(-1);
+		}
+
+		function click7() {
+			var element = document.getElementById("text1");
+			element.placeholder = document.getElementById("placeholder").value;
+			var pattern = document.getElementById("pattern").value;
+			element.pattern = (pattern == "") ? ".*" : pattern;
+		}
+
+		function click8() {
+			var rows = document.getElementById("table1").rows.length;
+			var element = document.getElementById("select1");
+			element.innerHTML = "";
+			for (var row = 1; row <= rows; row++) {
+				element.options[element.options.length] = new Option(
+					document.getElementById("option" + row).value,
+					document.getElementById("value" + row).value
+				);
+			}
+			element.selectedIndex = parseInt(document.getElementById("index").value);
+		}
+
+		function click9() {
+			var element = document.getElementById(document.getElementById("select6").value);
+			element.onfocus = (document.getElementById("onfocus").checked) ? function (event) {
+				alert("onfocus " + this.id + ": " + this.value);
+			} : "";
+			element.onblur = (document.getElementById("onblur").checked) ? function (event) {
+				alert("onblur " + this.id + ": " + this.value);
+			} : "";
+			element.oninput = (document.getElementById("oninput").checked) ? function (event) {
+				alert("oninput " + this.id + ": " + this.value);
+			} : "";
+			element.onchange = (document.getElementById("onchange").checked) ? function (event) {
+				alert("onchange " + this.id + ": " + this.value);
+			} : "";
+			element.onclick = (document.getElementById("onclick").checked) ? function (event) {
+				alert("onclick " + this.id + ": " + this.value);
+			} : "";
+		}
+	</script>
+</html>
+
