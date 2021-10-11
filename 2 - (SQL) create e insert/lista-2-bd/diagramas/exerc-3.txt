@@ -1,0 +1,33 @@
+3) Descreva e justifique as adequações/alterações que foram realizadas nos seguintes DER de nível
+físico da lista de exercícios de modelagem (lista1) para que os exercícios 1 e 2 acima pudessem ser
+resolvidos:
+    a) sites de ROMs
+        - Decidi remover a entidade auxiliar generoRom, pois notei que as roms só possuíam 1 gênero.
+        - Nesse diagrama ER, optei por criar uma entidade 'regiao', visto que duas ou mais ROMs podem ser de uma mesma região, porém com nomes diferentes. Poderia existir as regiões Usa, USA, Estados Unidos, etc... o que prejudicaria na hora de fazer buscas com o select. Então, cadastrando cada região os dados ficarão mais uniformes e organizados.
+        - Criei a entidade 'rating', que armazena as possíveis avaliações de uma rom, isso para permitir que um usuário faça a sua avaliação, referênciando as ratings possíveis.
+        - Criei a entidade 'user', visto que um usuário poderá interagir com as roms, cadastrando, avaliando e baixando. 
+        - Para que um usuário pudesse cadastrar uma ROM, coloquei como atributo da tabela 'rom', a fk de 'user' mais a data e hora que isso aconteceu. Acredito que através de uma função o programa possa identificar se o usuário é anônimo ou não.
+        - Junto de 'user', criei a entidade auxiliar 'userBaixaRoms', para cadastrar toda vez que um usuário faz um download, bem como a data e hora deste evento.
+        - Para as avaliações, criei a entidade auxiliar 'userAvaliaRom', que irá registar quando um usuário fez uma avaliação, e não ela própria. O que permitiria multiplas avaliações da mesma pessoa.
+
+    b) redes sociais
+        - A primeira alteração que fiz, foi trocar a pk do 'perfil' de email para 'codigo'. Isso porque um usuário pode trocar o email da sua conta, e mais, para armazená-lo, seria preciso transformá-lo em números...então prefiri criar um atributo código.
+        - E claro, assim, todas as entidades que carregavam o email do usuário, agora carregam o código dele.
+        - Para os grupos e páginas, removi o perfil_criador ou perfil_adm das primary keys, pois acredito que seria mais simples ter só uma pk e ela por sí seria suficiente para referenciar o grupo/pagina.
+        - Na entidade amigo, perfil, reagePost e post, adicionei o atributo dataHora, que registra o momento de cada ação.
+        - Do atributo 'cep' do perfil, criei entidades separadas: 'pais', 'estado' e 'cidade'. Isso porque acredito que armazená-los separadamente seria uma ideia melhor do que só um cep no perfil.
+        - Removi as entidade 'comentarioPost', 'respComentario', 'perfilCompartilhaPost' e 'reageComentario'. Isso tudo pois passei a considerar cada post, comentário, resposta e compartilhamento como um post.
+        - Agora, criei a entidade coment_compart, que registra os posts que "não são exatamente posts", podendo referenciar o post original. Essa entidade tem os atributos 'isComentario' e 'isCompart' justamente para difrenciar se aquele registro é um comentario ou um compartilhamento.
+        - Eu removi dos posts o email do usuario de pk, pois, assim como com as páginas e grupos, acho que ficaria mais simples de identificar cada post por um código. 
+
+    c) eleições
+        - Criei a entidade 'tribunalEleitoral', pois imagino que seja importante registrar quando o TSE ou TREs cadastram candidatos, eleições e afins.
+        - Da entidade 'localVotacao' eu a expandi, e criei as tables 'cidade', 'zona' e secao'.
+        - Tanto para a zona, quanto para a seção, decidi criar um código por dois motivos: primeiro porque ambas podem se repetir, e segundo porque estava com um erro de 'foreign key mismatch' quando colocava a zona com 2 pks (zona e cidade) ou a seção com 2 pks (secao e cidade). Contudo, coloquei como 'unique' estes atributos citados em cada entidade.
+        - na entidade eleitor, troquei o cpf pelo título de eleitor, o que faz mais sentido com o contexto.
+        - Desta vez, considerei cada candidato como um eleitor, então a entidade candidato recebe o título de eleitor que corresponde a um eleitor, além dos outros atributos que um candidato tem.
+        - No partido, troquei a pk que antes era um código, pela legenda dele.
+        - Agora, o cargo tem também a data do 1 e 2 turno de votação.
+        - No voto, troquei o ano pela data que o eleitor vota, pois antes ele servia para diferenciar uma eleição de outra. Agora, o cargo por sí só já faz isso, sendo cadastrado um novo a cada eleição.
+        - O voto também leva o número do candidato, pois achei que seria importante ele guardar este dado.
+        - A entidade 'naoVotou' agora leva o cargo que o eleitor não votou, assim referenciando àquela eleição em específico, mais dois atributos lógicos para identificar se esta ausência foi no 1 ou 2 turno.

@@ -1,1 +1,0 @@
-C:\Programacao\IFRS - Banco de Dados\listas-de-bd\7-lista> php -S localhost:8080 -c php.ini
