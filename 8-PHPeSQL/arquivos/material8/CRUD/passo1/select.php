@@ -8,6 +8,8 @@
 <td>Nascimento</td>
 </tr>
 <?php
+// C:\INFO\IFRS-BD\8-PHPeSQL\arquivos\material8\CRUD\passo1
+
 $where = array();
 if (isset($_GET["codigo"])) {
 	$where[] = "codigo = ".$_GET["codigo"];
